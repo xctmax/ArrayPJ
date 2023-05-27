@@ -119,7 +119,36 @@ namespace ArrayProject
                 };
             }
         }
-        //Ham Tim kiem vi tri gia tri phan tu ban muon
+                //Ham Tim kiem vi tri de sum 2 phan tu = target
+        static void Target(int[] arr,int length)
+        {
+            Console.Write("Nhap gia tri target:");
+            int target = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < length; i++)
+            {
+                int pt1 = target - arr[i];
+                for (int j = 0; j < length; j++)
+                {
+                    if (pt1 == arr[j])
+                    {
+                        Console.WriteLine(i + "   " + j);
+                    }
+                }
+            }
+        }
+        //Tim kiem vi tri gia tri phan tu ban muon sau khi da sap xep mang
+        static void SearchTargetSorted(int[] arr,int length)
+        {
+            Console.Write("Nhap gia tri target:");
+            int target = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < length; i++)
+            {
+                if (arr[i] == target)
+                {
+                    Console.Write( i + "    ");
+                }
+            }
+        }
 
         static void Main(string[] args)
         {
@@ -161,18 +190,18 @@ namespace ArrayProject
                     SoChinhPhuong(arr, length);
                     Console.ResetColor();
                     break;
-                /*case 5:
+                case 5:
                     Console.WriteLine("Tim kiem vi tri gia tri phan tu ban muon:");
                     Console.ForegroundColor = ConsoleColor.White;
-                    TimKiem(arr, length);
+                    Target(arr, length);
                     Console.ResetColor();
                     break;
                 case 6:
                     Console.WriteLine("Tim kiem vi tri gia tri phan tu ban muon sau khi da sap xep mang:");
                     Console.ForegroundColor = ConsoleColor.White;
-                    TimKiemSorted(arr, length);
+                    SearchTargetSorted(arr, length);
                     Console.ResetColor();
-                    break;*/
+                    break;
                 default:
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Nhap lai !");
